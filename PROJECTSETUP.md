@@ -1,5 +1,10 @@
 # Project Setup
 
+1. Update submodules
+    ```sh
+    git submodule update --init --resursive
+    ```
+git submodule update --init --resursive
 1. Create  and enter virtual environment (root of project)
     ```sh
     python3 -m venv fprime-venv
@@ -35,7 +40,7 @@
     ```sh
     fprime-util generate
     ```
-    
+
 ## Building the project
 
 1. If you already have the folders build-artifacts and build-fprime-automatic-FeatherM4_FreeRTOS in your project, delete them. Unzip build.zip in the google drive
