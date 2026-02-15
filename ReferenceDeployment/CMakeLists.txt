@@ -17,4 +17,5 @@ set(MOD_DEPS ${FPRIME_CURRENT_MODULE}/Top)
 
 register_fprime_deployment()
 
-# finalize_arduino_executable("${FPRIME_CURRENT_MODULE}")
+
+finalize_arduino_executable()
