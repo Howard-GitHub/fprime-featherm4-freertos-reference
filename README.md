@@ -92,9 +92,9 @@ Now, we need to make sure relevant Arduino libraries and tools are present. I ch
     ```sh
     curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=$VIRTUAL_ENV/bin sh
     ```
-    The version of arduino-cli-cmake-wrapper used to develop this procedure was version 0.2.0a1 but newer versions should work.
+    The PyPI version of arduino-cli-cmake-wrapper is outdated. Install from the CubeSTEP fork instead:
     ```sh
-    pip install arduino-cli-cmake-wrapper
+    pip install git+https://github.com/CubeSTEP/arduino-cli-cmake-wrapper.git@main
     ```
     ```sh
     arduino-cli config init

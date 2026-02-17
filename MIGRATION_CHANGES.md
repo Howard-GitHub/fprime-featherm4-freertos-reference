@@ -232,6 +232,24 @@ string(REGEX REPLACE "([^ ]*[(][^ ]*)" "\"\\1\"" CMAKE_EXE_LINKER_FLAGS_INIT "${
 
 ---
 
+## Repository: `arduino-cli-cmake-wrapper` (CubeSTEP fork)
+
+### 13. Updated `arduino-cli-cmake-wrapper` to 0.2.0a1 with build argument fixes
+
+**Problem:** The PyPI release of `arduino-cli-cmake-wrapper` (0.1.0) is outdated and does not match the GitHub source (0.2.0a1). The 0.1.0 version does not correctly pass build arguments through to `arduino-cli`, which prevents proper compilation for custom boards like the STM32H723ZG.
+
+**Change:** Forked `SterlingPeet/arduino-cli-cmake-wrapper` to `CubeSTEP/arduino-cli-cmake-wrapper` and replaced the source with the 0.2.0a1 codebase that includes:
+- Proper build argument passthrough to `arduino-cli compile`
+- Updated module structure (`builder.py`, `miner.py`, `parser.py`, `types.py`, `util.py` replacing old `parse.py`, `sketch.py`)
+- Correct handling of `ARDUINO_BUILD_PROPERTIES` for injecting compiler flags (e.g. `-DINCLUDE_xSemaphoreGetMutexHolder=1`)
+
+**Installation:** The `requirements.txt` in `fprime-arduino` and the project setup docs now point to the CubeSTEP fork:
+```sh
+pip install git+https://github.com/CubeSTEP/arduino-cli-cmake-wrapper.git@main
+```
+
+---
+
 ## Summary of Build Errors Resolved
 
 | # | Error | Root Cause | Fix |

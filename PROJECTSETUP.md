@@ -26,7 +26,7 @@ git submodule update --init --resursive
 
     curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | BINDIR=$VIRTUAL_ENV/bin sh
 
-    pip install arduino-cli-cmake-wrapper
+    pip install git+https://github.com/CubeSTEP/arduino-cli-cmake-wrapper.git@main
 
     arduino-cli config init
 
