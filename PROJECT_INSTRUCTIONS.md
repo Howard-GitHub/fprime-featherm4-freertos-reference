@@ -47,14 +47,13 @@
 
 # Flashing the Board
 
-## Ubuntu 22.04
-Flashing commands.
+## Flashing command
 ```sh
 # In ubuntu 22.04
-sh ~/.arduino15/packages/STMicroelectronics/tools/STM32Tools/2.4.0/stm32CubeProg.sh -i swd -f build-artifacts/FeatherM4_FreeRTOS/ReferenceDeployment/bin/ReferenceDeployment.elf.hex -c /dev/ttyAMC0
+sudo sh ~/.arduino15/packages/STMicroelectronics/tools/STM32Tools/2.4.0/stm32CubeProg.sh -i swd -f build-artifacts/FeatherM4_FreeRTOS/ReferenceDeployment/bin/ReferenceDeployment.elf.hex -c /dev/ttyAMC0
 
-# If the above command does not work for your OS, follow this format
-sh {path to stm32CubeProg.sh} -i swd -f build-artifacts/FeatherM4_FreeRTOS/ReferenceDeployment/bin/ReferenceDeployment.elf.hex -c {path to board connection}
+# If the above command does not work for your OS, follow this format (This might work depending on your OS)
+sudo sh {path to stm32CubeProg.sh} -i swd -f build-artifacts/FeatherM4_FreeRTOS/ReferenceDeployment/bin/ReferenceDeployment.elf.hex -c {path to board connection}
 ```
 
 ## Possible Issue for Ubuntu
@@ -74,8 +73,7 @@ export PATH="home/{name}/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin":"
 
 # Run fprime-gds
 
-## Ubuntu 22.04
-fprime-gds commands.
+## fprime-gds command
 ```sh
 # In ubuntu 22.04
 fprime-gds -n --dictionary build-artifacts/FeatherM4_FreeRTOS/ReferenceDeployment/dict/ReferenceDeploymentTopologyDictionary.json --communication-selection uart --uart-device /dev/ttyACM0 --uart-baud 115200 --framing-selection fprime
